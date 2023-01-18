@@ -95,6 +95,43 @@ function one(num) {
     return num;
 }
 
+function oneTable(num) {
+    if(num <= 0) {
+        num = Math.abs(num);
+    } 
+
+    while(true) {
+        // 숫자를 문자열로 변환
+        num = num.toString(); 
+        // numleng 에 숫자 자릿수 담기
+        numleng = num.length;
+
+        // 숫자 자릿수가 한자리 수 이상일때
+        if(numleng > 1) {
+
+            if(num == 11) {
+                break;
+            } else if(num == 22) {
+                break;
+            } else {
+                // 모든 자릿 수를 더하고 numtotal 에 넣음
+                numsplit = num.split("");
+                let numtotal = 0;
+                
+                for(var i = 0; i < numleng; i++) {
+                    numtotal += parseInt(numsplit[i]);
+                }
+                num = numtotal;
+            }
+        } else {
+            break;
+        }
+        
+    }
+    num = parseInt(num);
+    return num;
+}
+
 // 월 이나 일 같은 십의자리 더해서 한자리로 만드는 함수
 function spl(num) {
     num = num.toString();
